@@ -23,11 +23,15 @@
 
 <https://habr.com/ru/post/545150/>
 
+   
     @Column(name = "ADDRESS")
     @Pattern(regexp = "^([А-Яа-я]|[0-9]|\\.|,|-|\\/|\\(|\\)|\\\"|\\s)+$", message = "Поле должно содержать только символы . , / ( ) \"")
     protected String address;
 
-    ![image-1.png](./image-1.png)
+
+![image-1.png](https://code.groupstp.ru/aleksey.zyryanov/achievements/-/raw/01b3cb015a535b0f00fa911eacbf4e1f1914c557/image-1.png)
+
+
 
 ###### 2. Убрать символы переноса
 Проконсультировался с Алексеем, решил использовать сеттер для реализации требования и написал решение по второму заданию. По итогу любое количество пробельных символов >1 и любое количество переносов будут заменяться на 1 проблел:
@@ -36,7 +40,9 @@
         address = address.replaceAll("\\n|\\s{2,}", " ");
         this.address = address;
     }
-    ![image.png](./image.png)
+
+
+![image.png](https://code.groupstp.ru/aleksey.zyryanov/achievements/-/raw/01b3cb015a535b0f00fa911eacbf4e1f1914c557/image.png)
 
 #### Дополнительно
 
